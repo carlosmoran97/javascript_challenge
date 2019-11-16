@@ -1,7 +1,7 @@
 /*
 Post model
 */
-export function Post(title, body){
+function Post(title, body){
     this.title = title;
     this.body = body;
 }
@@ -9,12 +9,13 @@ export function Post(title, body){
 /*
 User model
 */
-export function User(name){
+function User(id, name){
+    this.id = id;
     this.name = name;
     this.posts = [];
 }
 
-User.prototype.gender = function(gender){
+User.prototype.setGender = function(gender){
     this.gender = gender;
 }
 
@@ -23,9 +24,11 @@ User.prototype.setPhotoUrl = function(photoUrl){
 }
 
 User.prototype.getFirstName = function(){
-    this.name.split(" ")[0];
+    return this.name.split(" ")[0];
 }
 
 User.prototype.addPost = function(post){
     this.posts.push(post);
 }
+
+export{User, Post};

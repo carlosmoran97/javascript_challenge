@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --space: 50px;
+}
+.content{
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: var(--space);
+    margin: 0 auto;
+    padding-top: var(--space);
+}
+.user{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.user--posts{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.user--name--container{
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 400px) {
+  .content{
+    grid-template-columns: auto;
+  }
+  .user{
+      display: block;
+      text-align: center;
+  }
+  .user--name--container{
+      display: block;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+    .content{
+      grid-template-columns: auto auto;
+    }
+}
+
+.user--img{
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+}
